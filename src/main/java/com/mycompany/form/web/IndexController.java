@@ -20,7 +20,47 @@ public class IndexController{
     /**
      * Creates a new instance of IndexController
      */
-    private String nombre, seleccion;
+   private String nombre, seleccion, cedula, apellido, nivEducativo, idiomas, diasTrabajados;
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getNivEducativo() {
+        return nivEducativo;
+    }
+
+    public void setNivEducativo(String nivEducativo) {
+        this.nivEducativo = nivEducativo;
+    }
+
+    public String getIdiomas() {
+        return idiomas;
+    }
+
+    public void setIdiomas(String idiomas) {
+        this.idiomas = idiomas;
+    }
+
+    public String getDiasTrabajados() {
+        return diasTrabajados;
+    }
+
+    public void setDiasTrabajados(String diasTrabajados) {
+        this.diasTrabajados = diasTrabajados;
+    }
 
     public String getSeleccion() {
         return seleccion;
