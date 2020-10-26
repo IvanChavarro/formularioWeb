@@ -51,7 +51,7 @@
                 <div class="datosBasicos">
                     <div class="contenedor">
                         <h3 class="ingresaNombre">ingrese su nombre</h3>
-                        <h:inputText value="#{indexController.nombre}"/>
+                        <h:outputLabel value="#{indexController.nombre}"></h:outputLabel>
                     </div> <!-- cierre div de nombre -->
                     <div class="contenedor">
                         <h3 class="ingresaApellido">ingrese su apellido</h3>
@@ -74,12 +74,11 @@
                 <fieldset>
                     <div class="niv_educativo">
                         <h3 class="Niv_educativo">Nivel educativo</h3>
-                        <h:selectOneMenu value="#{indexController.nivelEducativo}">
+                        <h:selectOneMenu value="">
                             <f:selectItem itemValue="Bachiller" itemLabel="Bachiller"/>
                             <f:selectItem itemValue="Tecnico" itemLabel="Tecnico"/>
                             <f:selectItem itemValue="Tecnologo" itemLabel="Tecnologo"/>
                             <f:selectItem itemValue="Profesional" itemLabel="Profesional"/>
-                            <f:selectItems value="#{indexController.seleccion}"/>
                         </h:selectOneMenu>
                     </div><!-- cierre div de nivel educativo -->
                 </fieldset>
@@ -103,7 +102,7 @@
                 </fieldset>
 
             </fieldset>
-            <h:commandButton actionListener="#{indexController.mostrarDatos()}"/>
+            <h:commandButton actionListener="#{indexController.click()}"/>
         </h:form>
 
     </h:body>
