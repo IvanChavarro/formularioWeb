@@ -7,6 +7,7 @@ package com.mycompany.form.web;
 
 import javax.enterprise.context.RequestScoped;
 
+
 import javax.inject.Named;
 
 /**
@@ -20,7 +21,23 @@ public class IndexController{
     /**
      * Creates a new instance of IndexController
      */
-   private String nombre, seleccion, cedula, apellido, nivEducativo, idiomas, diasTrabajados;
+    private String nombre;
+    private String seleccion;
+    private String cedula;
+    private String apellido;
+    private String nivEducativo;
+    private String idiomas;
+    private String diasTrabajados;
+
+    public IndexController() {
+    }
+
+    private String[] nivelEducativo = {"Bachiller", "Tecnico", "Tecnologo", "Profesional"};
+
+    public void click() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Apellido" + this.apellido);
+    }
 
     public String getCedula() {
         return cedula;
@@ -70,8 +87,6 @@ public class IndexController{
         this.seleccion = seleccion;
     }
 
-    private String[] nivelEducativo = {"Bachiller", "Tecnico", "Tecnologo", "Profesional"};
-
     public String[] getNivelEducativo() {
         return nivelEducativo;
     }
@@ -86,10 +101,6 @@ public class IndexController{
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public void mostrarDatos() {
-        System.out.println(this.nombre);
     }
 
 }
