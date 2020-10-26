@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Formulario para medir ingresos</title>
+    </h:head>
+    <style>
+        h1.titulo{
+            width: 75%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            font-family: var,fantasy, serif;
+            text-transform: uppercase;
+            text-align: center;
+            border-bottom: 1px  solid red; 
+            padding-bottom: 12px;
+        }
+
+
+        .contenedor{
+            text-align: center;
+            float: left;
+            width: 50%;
+        }
+
+        .niv_educativo{
+            width: 100%;
+            text-align: center;
+        }
+
+        .idiomas{
+            width: 50%;
+            float: left;
+            text-align: center;
+        }
+
+
+    </style>
+
+    <h:body>
+        <header>
+            <div>
+                <h1 class="titulo">formulario</h1>
+            </div>
+        </header>
+        <h:form>
+            <fieldset>
+                <legend>Datos básicos</legend>
+                <div class="datosBasicos">
+                    <div class="contenedor">
+                        <h3 class="ingresaNombre">ingrese su nombre</h3>
+                        <h:inputText value="#{indexController.nombre}"/>
+                    </div> <!-- cierre div de nombre -->
+                    <div class="contenedor">
+                        <h3 class="ingresaApellido">ingrese su apellido</h3>
+                        <h:inputText class="Apellido"/>
+                    </div> <!-- Cierre div de apellido -->
+                    <div class="contenedor">
+                        <h3 class="ingresaCedula">ingrese su Cédula</h3>
+                        <h:inputText class="Cedula"/>
+                    </div><!-- Cierre div de cedula -->
+                    <div class="contenedor">
+                        <h3 class="fec_Nacimiento">ingrese su fecha de nacimiento</h3>
+                        <input type="date" class="Nacimiento"></input>
+
+                    </div> <!-- Cierre div de fecha de nacimiento -->
+                </div>
+            </fieldset><!-- Cierre fieldset de Datos básicos -->
+            <br></br>
+            <fieldset> 
+                <legend>Educación</legend>
+                <fieldset>
+                    <div class="niv_educativo">
+                        <h3 class="Niv_educativo">Nivel educativo</h3>
+                        <h:selectOneMenu value="#{indexController.nivelEducativo}">
+                            <f:selectItem itemValue="Bachiller" itemLabel="Bachiller"/>
+                            <f:selectItem itemValue="Tecnico" itemLabel="Tecnico"/>
+                            <f:selectItem itemValue="Tecnologo" itemLabel="Tecnologo"/>
+                            <f:selectItem itemValue="Profesional" itemLabel="Profesional"/>
+                            <f:selectItems value="#{indexController.seleccion}"/>
+                        </h:selectOneMenu>
+                    </div><!-- cierre div de nivel educativo -->
+                </fieldset>
+                <br></br>
+                <fieldset>
+                    <div class="idiomas">
+                        <h3>Idiomas</h3>
+                        <h:selectBooleanCheckbox>Español</h:selectBooleanCheckbox><!-- checkbox Español -->
+                        <br></br>
+                        <h:selectBooleanCheckbox>Inglés</h:selectBooleanCheckbox><!-- checkbox Inglés -->
+                        <br></br>
+                        <h:selectBooleanCheckbox>Francés</h:selectBooleanCheckbox> <!-- checkbox Francés -->
+                        <br></br>
+                        <h:selectBooleanCheckbox>Alemán</h:selectBooleanCheckbox><!-- checkbox Alemán -->
+                        <br></br>
+                    </div>
+                    <div class="idiomas">
+                        <h3>Dias Trabajados</h3>
+                        <h:inputText/>
+                    </div>
+                </fieldset>
+
+            </fieldset>
+            <h:commandButton actionListener="#{indexController.mostrarDatos()}"/>
+        </h:form>
+
+    </h:body>
+</html>
+
+
