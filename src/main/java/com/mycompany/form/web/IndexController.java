@@ -6,6 +6,7 @@
 package com.mycompany.form.web;
 
 import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import javax.inject.Named;
 
 /**
@@ -13,6 +14,7 @@ import javax.inject.Named;
  * @author Iván
  */
 @Named
+@ViewScoped
 public class IndexController{
 
     /**
