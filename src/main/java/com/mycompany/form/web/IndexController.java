@@ -5,6 +5,8 @@
  */
 package com.mycompany.form.web;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.enterprise.context.RequestScoped;
 
 
@@ -28,15 +30,28 @@ public class IndexController{
     private String nivEducativo;
     private String idiomas;
     private String diasTrabajados;
+    private String[] nivelEducativo = {"Bachiller", "Tecnico", "Tecnologo", "Profesional"};
+    private List<String> seleccionIdiomas;
+    private List<String> guardarIdiomas;
 
     public IndexController() {
+        seleccionIdiomas=new ArrayList<String>();
+        seleccionIdiomas.add("Español");
+        seleccionIdiomas.add("Inglés");
+        seleccionIdiomas.add("Francés");
+        seleccionIdiomas.add("Alemán");
     }
 
-    private String[] nivelEducativo = {"Bachiller", "Tecnico", "Tecnologo", "Profesional"};
+    
 
     public void click() {
         System.out.println("Nombre: " + nombre);
-        System.out.println("Apellido" + this.apellido);
+        System.out.println("Apellido: " + this.apellido);
+        System.out.println("Cedula: " + this.cedula);
+        System.out.println("Nivel educativo: " + this.nivEducativo);
+        System.out.println("Idiomas: " + this.guardarIdiomas);
+        System.out.println("Idiomas: " + this.idiomas);
+        System.out.println("Dias trabajados: " + this.diasTrabajados);
     }
 
     public String getCedula() {
@@ -103,4 +118,21 @@ public class IndexController{
         this.nombre = nombre;
     }
 
+    public List<String> getSeleccionIdiomas() {
+        return seleccionIdiomas;
+    }
+
+    public void setSeleccionIdiomas(List<String> seleccionIdiomas) {
+        this.seleccionIdiomas = seleccionIdiomas;
+    }
+
+    public List<String> getGuardarIdiomas() {
+        return guardarIdiomas;
+    }
+
+    public void setGuardarIdiomas(List<String> guardarIdiomas) {
+        this.guardarIdiomas = guardarIdiomas;
+    }
+    
+    
 }

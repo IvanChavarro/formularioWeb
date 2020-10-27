@@ -59,7 +59,7 @@
                     </div> <!-- Cierre div de apellido -->
                     <div class="contenedor">
                         <h3 class="ingresaCedula">ingrese su Cédula</h3>
-                        <h:inputText class="Cedula"/>
+                        <h:inputText class="Cedula" value="#{indexController.cedula}"/>
                     </div><!-- Cierre div de cedula -->
                     <div class="contenedor">
                         <h3 class="fec_Nacimiento">ingrese su fecha de nacimiento</h3>
@@ -74,7 +74,7 @@
                 <fieldset>
                     <div class="niv_educativo">
                         <h3 class="Niv_educativo">Nivel educativo</h3>
-                        <h:selectOneMenu value="">
+                        <h:selectOneMenu value="#{indexController.nivEducativo}">
                             <f:selectItem itemValue="Bachiller" itemLabel="Bachiller"/>
                             <f:selectItem itemValue="Tecnico" itemLabel="Tecnico"/>
                             <f:selectItem itemValue="Tecnologo" itemLabel="Tecnologo"/>
@@ -86,23 +86,18 @@
                 <fieldset>
                     <div class="idiomas">
                         <h3>Idiomas</h3>
-                        <h:selectBooleanCheckbox>Español</h:selectBooleanCheckbox><!-- checkbox Español -->
-                        <br></br>
-                        <h:selectBooleanCheckbox>Inglés</h:selectBooleanCheckbox><!-- checkbox Inglés -->
-                        <br></br>
-                        <h:selectBooleanCheckbox>Francés</h:selectBooleanCheckbox> <!-- checkbox Francés -->
-                        <br></br>
-                        <h:selectBooleanCheckbox>Alemán</h:selectBooleanCheckbox><!-- checkbox Alemán -->
+                        <h:selectManyCheckbox value="#{indexController.guardarIdiomas}"/>
+                        <f:selectItems value="#{indexController.seleccionIdiomas}"/>
                         <br></br>
                     </div>
                     <div class="idiomas">
                         <h3>Dias Trabajados</h3>
-                        <h:inputText/>
+                        <h:inputText value="#{indexController.diasTrabajados}"/>
                     </div>
                 </fieldset>
 
             </fieldset>
-            <h:commandButton actionListener="#{indexController.click()}"/>
+            <h:commandButton value="Continuar" action="#{indexController.click()}"/>
         </h:form>
 
     </h:body>
