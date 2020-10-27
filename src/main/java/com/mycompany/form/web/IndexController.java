@@ -12,8 +12,9 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 /**
- *
- * @author Iván
+ * @since 27/10/2020
+ * @author Ivan chavarro
+ * @author Karen Tibaquira
  */
 @Named
 @RequestScoped
