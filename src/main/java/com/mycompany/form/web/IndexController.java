@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 
-
 import javax.inject.Named;
 
 /**
@@ -18,7 +17,7 @@ import javax.inject.Named;
  */
 @Named
 @RequestScoped
-public class IndexController{
+public class IndexController {
 
     /**
      * Creates a new instance of IndexController
@@ -35,22 +34,24 @@ public class IndexController{
     private List<String> guardarIdiomas;
 
     public IndexController() {
-        seleccionIdiomas=new ArrayList<String>();
-        seleccionIdiomas.add("Español");
+        seleccionIdiomas = new ArrayList<String>();
+        seleccionIdiomas.add("Mandarín");
+        seleccionIdiomas.add("Ruso");
         seleccionIdiomas.add("Inglés");
-        seleccionIdiomas.add("Francés");
-        seleccionIdiomas.add("Alemán");
+        seleccionIdiomas.add("Portugues");
+        seleccionIdiomas.add("Vientoñol");
+
     }
 
-    
-
     public void click() {
-        System.out.println("Nombre: " + nombre);
+       /* System.out.println("Nombre: " + nombre);
         System.out.println("Apellido: " + this.apellido);
         System.out.println("Cedula: " + this.cedula);
         System.out.println("Nivel educativo: " + this.nivEducativo);
-        System.out.println("Idiomas: " + this.guardarIdiomas);
+        System.out.println("Idioma " + this.guardarIdiomas);
         System.out.println("Dias trabajados: " + this.diasTrabajados);
+*/
+        
     }
 
     public String getCedula() {
@@ -132,6 +133,5 @@ public class IndexController{
     public void setGuardarIdiomas(List<String> guardarIdiomas) {
         this.guardarIdiomas = guardarIdiomas;
     }
-    
-    
+
 }
