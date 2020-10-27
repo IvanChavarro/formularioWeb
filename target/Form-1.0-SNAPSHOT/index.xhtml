@@ -36,6 +36,38 @@
             text-align: center;
         }
 
+        .divBoton{
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        .boton{
+            border-radius: 15px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 300px;
+            -webkit-transition: all .4s ease-in-out;
+            transition: all .5s ease-in-out;
+        }
+        .boton:hover{
+            background-color: red;
+            -webkit-transform: scale(1.2);
+        }
+
+        .resultado{
+            width: 100%;
+        }
+        
+        .resultado.output{
+            text-align: center;
+            font-size: 50px;
+            text-transform: uppercase;
+        }
+        
+        fieldset{
+            border-color: red;
+        }
 
     </style>
 
@@ -79,27 +111,45 @@
                             <f:selectItem itemValue="Tecnico" itemLabel="Tecnico"/>
                             <f:selectItem itemValue="Tecnologo" itemLabel="Tecnologo"/>
                             <f:selectItem itemValue="Profesional" itemLabel="Profesional"/>
+                            <f:selectItem itemValue="Magister" itemLabel="Magister"/>
                         </h:selectOneMenu>
                     </div><!-- cierre div de nivel educativo -->
                 </fieldset>
                 <br></br>
                 <fieldset>
-                    
+                    <div class="idiomas">
                         <h3>Idiomas</h3>
                         <h:selectManyCheckbox value="#{indexController.guardarIdiomas}">
                             <f:selectItems value="#{indexController.seleccionIdiomas}"/>
                         </h:selectManyCheckbox>
                         <br></br>
-                    
+                    </div>
                     <div class="idiomas">
                         <h3>Dias Trabajados</h3>
                         <h:inputText value="#{indexController.diasTrabajados}"/>
                     </div>
+                    <div class="idiomas">
+                        <h3>Sueldo Base</h3>
+                        <h:inputText value="#{indexController.sueldoBase}"/>
+                    </div>
                 </fieldset>
 
             </fieldset>
-            <h:commandButton value="Continuar" action="#{indexController.click()}"/>
+            <div class="divBoton">
+                <h:commandButton class="boton" value="Continuar" action="#{indexController.click()}"/>
+            </div>
+
         </h:form>
+
+        <div class="Resultado">
+            <fieldset>
+                <legend>Resultado</legend>
+                <h2>Resultado operación</h2>
+                <div class="resultado">
+                    <h:outputLabel class="output" value="#{indexController.mensajeResultado}" />
+                </div>
+            </fieldset>
+        </div>
 
     </h:body>
 </html>

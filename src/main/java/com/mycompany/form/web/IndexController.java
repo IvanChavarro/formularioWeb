@@ -22,6 +22,9 @@ public class IndexController {
     /**
      * Creates a new instance of IndexController
      */
+    /**
+     * Variables de carga desde el view
+     */
     private String nombre;
     private String seleccion;
     private String cedula;
@@ -29,9 +32,21 @@ public class IndexController {
     private String nivEducativo;
     private String idiomas;
     private String diasTrabajados;
-    private String[] nivelEducativo = {"Bachiller", "Tecnico", "Tecnologo", "Profesional"};
+    private String sueldoBase;
+    private String[] nivelEducativo = {"Bachiller", "Tecnico", "Tecnologo", "Profesional", "Magister"};
     private List<String> seleccionIdiomas;
     private List<String> guardarIdiomas;
+    private String mensajeResultado;
+
+    public String getMensajeResultado() {
+        return mensajeResultado;
+    }
+
+    public void setMensajeResultado(String mensajeResultado) {
+        this.mensajeResultado = mensajeResultado;
+    }
+
+    private int pagoFinal, aux;
 
     public IndexController() {
         seleccionIdiomas = new ArrayList<String>();
@@ -44,14 +59,34 @@ public class IndexController {
     }
 
     public void click() {
-       /* System.out.println("Nombre: " + nombre);
-        System.out.println("Apellido: " + this.apellido);
-        System.out.println("Cedula: " + this.cedula);
-        System.out.println("Nivel educativo: " + this.nivEducativo);
-        System.out.println("Idioma " + this.guardarIdiomas);
-        System.out.println("Dias trabajados: " + this.diasTrabajados);
-*/
-        
+        pagoFinal = Integer.parseInt(diasTrabajados) * Integer.parseInt(sueldoBase);
+        estudios();
+        idiomas();
+        mensajeResultado = "Señor "+this.nombre+" "
+                +this.apellido+", identificado con C.C "+this.cedula+
+                ", su salario será de "+pagoFinal;
+    }
+
+    private void estudios() {
+        switch (this.nivEducativo) {
+            case "Tecnico":
+                pagoFinal += 5000;
+                break;
+            case "Tecnologo":
+                pagoFinal += 15000;
+                break;
+            case "Profesional":
+                pagoFinal += 30000;
+                break;
+            case "Magister":
+                pagoFinal += 40000;
+                break;
+        }
+    }
+
+    private void idiomas() {
+        aux =  guardarIdiomas.size()*10000;
+        pagoFinal += aux;
     }
 
     public String getCedula() {
@@ -132,6 +167,14 @@ public class IndexController {
 
     public void setGuardarIdiomas(List<String> guardarIdiomas) {
         this.guardarIdiomas = guardarIdiomas;
+    }
+
+    public String getSueldoBase() {
+        return sueldoBase;
+    }
+
+    public void setSueldoBase(String sueldoBase) {
+        this.sueldoBase = sueldoBase;
     }
 
 }
