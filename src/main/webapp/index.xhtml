@@ -47,7 +47,7 @@
         </header>
         <h:form>
             <fieldset>
-                <legend>Datos básicos</legend>
+                <legend>Datos bÃ¡sicos</legend>
                 <div class="datosBasicos">
                     <div class="contenedor">
                         <h3 class="ingresaNombre">ingrese su nombre</h3>
@@ -58,7 +58,7 @@
                         <h:inputText class="Apellido" value="#{indexController.apellido}"/>
                     </div> <!-- Cierre div de apellido -->
                     <div class="contenedor">
-                        <h3 class="ingresaCedula">ingrese su Cédula</h3>
+                        <h3 class="ingresaCedula">ingrese su CÃ©dula</h3>
                         <h:inputText class="Cedula" value="#{indexController.cedula}"/>
                     </div><!-- Cierre div de cedula -->
                     <div class="contenedor">
@@ -67,10 +67,10 @@
 
                     </div> <!-- Cierre div de fecha de nacimiento -->
                 </div>
-            </fieldset><!-- Cierre fieldset de Datos básicos -->
+            </fieldset><!-- Cierre fieldset de Datos bÃ¡sicos -->
             <br></br>
             <fieldset> 
-                <legend>Educación</legend>
+                <legend>EducaciÃ³n</legend>
                 <fieldset>
                     <div class="niv_educativo">
                         <h3 class="Niv_educativo">Nivel educativo</h3>
@@ -86,8 +86,9 @@
                 <fieldset>
                     <div class="idiomas">
                         <h3>Idiomas</h3>
-                        <h:selectManyCheckbox value="#{indexController.guardarIdiomas}"/>
-                        <f:selectItems value="#{indexController.seleccionIdiomas}"/>
+                        <h:selectManyCheckbox value="#{indexController.guardarIdiomas}" layout="pageDirection">
+                            <f:selectItems value="#{indexController.seleccionIdiomas}"/>
+                        </h:selectManyCheckbox>
                         <br></br>
                     </div>
                     <div class="idiomas">

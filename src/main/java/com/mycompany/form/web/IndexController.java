@@ -50,7 +50,6 @@ public class IndexController{
         System.out.println("Cedula: " + this.cedula);
         System.out.println("Nivel educativo: " + this.nivEducativo);
         System.out.println("Idiomas: " + this.guardarIdiomas);
-        System.out.println("Idiomas: " + this.idiomas);
         System.out.println("Dias trabajados: " + this.diasTrabajados);
     }
 
