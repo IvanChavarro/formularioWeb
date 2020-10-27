@@ -116,7 +116,7 @@ public class IndexController {
         idiomas();
         mensajeResultado = "Señor " + this.nombre + " "
                 + this.apellido + ", identificado con C.C " + this.cedula
-                + ", su salario será de " + pagoFinal;
+                + ", su salario será de $" + pagoFinal;
     }
 
     /**
