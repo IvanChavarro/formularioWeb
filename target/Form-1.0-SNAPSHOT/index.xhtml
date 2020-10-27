@@ -6,6 +6,7 @@
     <h:head>
         <title>Formulario para medir ingresos</title>
     </h:head>
+    <!--Estilos -->
     <style>
         h1.titulo{
             width: 75%;
@@ -70,16 +71,18 @@
         }
 
     </style>
-
+    <!--Cuerpo de la pagina -->
     <h:body>
+        <!--La cabeza de la pagina -->
         <header>
             <div>
                 <h1 class="titulo">formulario</h1>
             </div>
         </header>
         <h:form>
+            <!--border -->
             <fieldset>
-                <legend>Datos básicos</legend>
+                <legend>Datos bÃ¡sicos</legend>
                 <div class="datosBasicos">
                     <div class="contenedor">
                         <h3 class="ingresaNombre">ingrese su nombre</h3>
@@ -90,7 +93,7 @@
                         <h:inputText class="Apellido" value="#{indexController.apellido}"/>
                     </div> <!-- Cierre div de apellido -->
                     <div class="contenedor">
-                        <h3 class="ingresaCedula">ingrese su Cédula</h3>
+                        <h3 class="ingresaCedula">ingrese su CÃ©dula</h3>
                         <h:inputText class="Cedula" value="#{indexController.cedula}"/>
                     </div><!-- Cierre div de cedula -->
                     <div class="contenedor">
@@ -99,10 +102,11 @@
 
                     </div> <!-- Cierre div de fecha de nacimiento -->
                 </div>
-            </fieldset><!-- Cierre fieldset de Datos bÃ¡sicos -->
+            </fieldset><!-- Cierre fieldset de Datos bÃƒÂ¡sicos -->
             <br></br>
             <fieldset> 
-                <legend>Educación</legend>
+                <legend>EducaciÃ³n</legend>
+                <!--border -->
                 <fieldset>
                     <div class="niv_educativo">
                         <h3 class="Niv_educativo">Nivel educativo</h3>
@@ -116,6 +120,7 @@
                     </div><!-- cierre div de nivel educativo -->
                 </fieldset>
                 <br></br>
+                <!--border -->
                 <fieldset>
                     <div class="idiomas">
                         <h3>Idiomas</h3>
@@ -133,7 +138,6 @@
                         <h:inputText value="#{indexController.sueldoBase}"/>
                     </div>
                 </fieldset>
-
             </fieldset>
             <div class="divBoton">
                 <h:commandButton class="boton" value="Continuar" action="#{indexController.click()}"/>
@@ -142,9 +146,10 @@
         </h:form>
 
         <div class="Resultado">
+            <!--border -->
             <fieldset>
                 <legend>Resultado</legend>
-                <h2>Resultado operación</h2>
+                <h2>Resultado operaciÃ³n</h2>
                 <div class="resultado">
                     <h:outputLabel class="output" value="#{indexController.mensajeResultado}" />
                 </div>
